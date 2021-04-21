@@ -1,5 +1,5 @@
-
 <?php
+error_reporting(0);
 // Memulai session.
 //session_start();
 
@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) {
 }
 
 // Include koneksi database.
-include "koneksi.php";
+include "../../config/koneksi.php";
 
 // Jika tombol login ditekan, maka akan mengirimkan variabel yang berisi username dan password.
 if (isset($_POST['login'])) {
@@ -18,28 +18,31 @@ if (isset($_POST['login'])) {
     $userpass = md5($_POST['password']); // password yang di inputkan oleh user lewat form login.
 
     // Query ke database.
-    $sql = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$email' AND status = 'aktif'");
+    $sql = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$email' AND password='$userpass' AND status = 'aktif'");
     $ketemu=mysqli_num_rows($sql);
     $r=mysqli_fetch_array($sql);
-    $sql2 = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$email' AND status = 'nonaktif'");
+    $sql2 = mysqli_query($koneksi, "SELECT * FROM users WHERE email = '$email' AND password='$userpass' AND status = 'nonaktif'");
     $ketemu2=mysqli_num_rows($sql2);
 
     if ($ketemu > 0){
     session_start();
-    
-        $_SESSION[nama]     = $r[nama];
-        $_SESSION[email]  = $r[email];
-        $_SESSION[no_hp]     = $r[no_hp];
-        $_SESSION[password]    = $r[password];
-        $_SESSION[alamat]        = $r[alamat];
-        $_SESSION[status]      = $r[status];
-        $_SESSION[level]  = $r[level];
+    include "timeout.php";
         
-        if ($r[level=='member']){
-            header('location:../web/main.php');
-        } elseif ($r[level]=='pelelang') {
+        $_SESSION['id_user']  = $r['id_user'];
+        $_SESSION['nama']     = $r['nama'];
+        $_SESSION['email']    = $r['email'];
+        $_SESSION['no_hp']    = $r['no_hp'];
+        $_SESSION['password'] = $r['password'];
+        $_SESSION['alamat']   = $r['alamat'];
+        $_SESSION['status']   = $r['status'];
+        $_SESSION['role']    = $r['role'];
+        
+        if ($r['role'=='member']){
+            // var_dump($_SESSION);
+            header('location:../main.php');
+        } elseif ($r['level']=='pelelang') {
             // .....
-        } elseif ($r[level]=='admin') {
+        } elseif ($r['level']=='admin') {
             // ....
         }
     }

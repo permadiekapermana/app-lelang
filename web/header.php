@@ -1,3 +1,7 @@
+<?php
+include "../config/koneksi.php";
+session_start();
+?>
 <header class="site-navbar py-4 site-navbar-target" role="banner">
 
 <div class="container">
@@ -29,8 +33,24 @@
     <div class="ml-auto">
 
       <div class="social-wrap">
-        <!-- <h6 class="text-white"> <button class="btn-sm btn-primary"><a href="" class="text-white">Top Up</a></button> | Saldo : Rp. 1.000.000 | <button class="btn-sm btn-danger"> <a href="" class="text-white">Logout</a> </button></h6> -->
-        <a href="main.php?page=login" class="text-white">Sign In / Register</a>
+        <?php
+        if (empty($_SESSION['id_user']) AND empty($_SESSION['password'])){
+        $sql    = mysqli_query($koneksi, "SELECT * FROM users ORDER BY id_user DESC LIMIT 1");
+        $ketemu = mysqli_fetch_array($sql);
+
+        $last_id = $ketemu['id_user'];
+        ?>
+          <a href="main.php?page=login" class="text-white">Sign In / Register</a>
+        <?php
+        } else {
+          $sql    = mysqli_query($koneksi, "SELECT * FROM detail_member WHERE id_user=$_SESSION[id_user]");
+          $ketemu = mysqli_fetch_array($sql);
+          $saldo  = $ketemu['saldo'];
+        ?>
+          <h6 class="text-white"><b>Saldo</b> : Rp. <?=$saldo?> |  <button class="btn-sm btn-success"><a href="#" class="text-white">Akun Saya</a></button><button class="btn-sm btn-danger"> <a href="modul/logout.php" class="text-white" onClick="return confirm('Are you sure ?')">Logout</a> </button></h6>
+        <?php
+        }
+        ?>
         
 
         <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span

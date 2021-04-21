@@ -3,7 +3,7 @@
     session_start();
 
     if($_SESSION['role'] == 'member') {
-        header('location:admin/main.php');
+        header('location:web/main.php');
     } 
     elseif($_SESSION['role'] == 'admin')
     {

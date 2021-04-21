@@ -3,6 +3,14 @@
 <?php error_reporting(0); ?>
 <?php include "../config/koneksi.php"; ?>
 <?php $page = $_GET['page']; $method = $_GET['method']; $id = $_GET['id']; ?>
+<?php
+if ($_SESSION['role']!='admin'){
+  echo "<script>alert('Hak akses untuk admin sistem!'); window.location = '../web/main.php'</script>";
+}
+elseif (empty($_SESSION['id_user']) AND empty($_SESSION['id_user'])){
+  echo "<script>alert('Untuk akses sistem, anda harus login!'); window.location = '../web/main.php'</script>";
+}
+?>
 <html>
 <head>
   <meta charset="utf-8">

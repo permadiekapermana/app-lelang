@@ -4,6 +4,7 @@
         <div class="col-md-3">
         <div class="side-box mb-5">
             <h3>Categories</h3>
+            <?=$_SESSION['nama']?>
             <ul class="list-unstyled auction-categories">
             <?php 
             $query = "SELECT * FROM kategori order by id_kategori DESC";

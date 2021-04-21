@@ -30,7 +30,6 @@
   <link rel="stylesheet" href="css/style.css">
 
 
-
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -59,7 +58,13 @@
               <div class="col-md-7 mx-auto text-center" data-aos="fade-up">
                 <h1>Tempat Terbaik Untuk Lelang Barang Anda !</h1>
                 <p>Lakukan lelang cukup dari rumah untuk, kami akan pertemukan anda dengan calon pembeli segera</p>
+                <?php
+                if (empty($_SESSION['id_user']) AND empty($_SESSION['password'])){
+                ?>
                 <p><a href="main.php?page=login" class="btn btn-primary">Registrasi</a></p>
+                <?php
+                }
+                ?>
               </div>
             </div>
           </div>
@@ -70,7 +75,11 @@
 
         <p class="mb-5"></p>
         <?php include "konten.php"; ?>
-
+        
+        <?php
+        $page = $_GET['page'];
+        if ($page=='') {
+        ?>
         <div class="site-section pt-0">
           <div class="container">
             <div class="row">
@@ -113,11 +122,15 @@
         </div>
 
         <?php
+        }
+        ?>
+
+        <?php
           include "footer.php";
         ?>
 
 
-      </div>
+      <!-- </div> -->
       <!-- .site-wrap -->
 
 
@@ -143,6 +156,7 @@
 
 
       <script src="js/main.js"></script>
+
       
     </body>
 

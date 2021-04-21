@@ -1,5 +1,5 @@
 <?php 
-include "config/koneksi.php";
+include "../config/koneksi.php";
 
 $page = $_GET['page'];
 
@@ -9,13 +9,11 @@ if( $page == 'barang'){
 }
 
 if($page == 'login'){
-  include "modul/login.php";
-    if($_GET['message'] == 'failregis')
-    {
-      echo "<script>
-        alert('Registrasi Gagal');
-      </script>";
-    }
+  if (!empty($_SESSION['id_user'])){
+    echo "<script>alert('Anda sudah login!'); window.location = '../web/main.php'</script>";
+  } else {
+    include "modul/login.php";
+  }
 }
 
 if($page == 'kontak') {
@@ -27,7 +25,7 @@ if($page == 'item'){
 }
 
 if($page == ''){
-  include "modul/main-page2.php";
+  include "modul/main.php";
 }
 
 if($page == 'riwayat'){
