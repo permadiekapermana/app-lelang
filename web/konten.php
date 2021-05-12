@@ -32,4 +32,8 @@ if($page == 'riwayat'){
   include "modul/riwayat.php";
 }
 
+if($page == 'riwayat_user'){
+  include "modul/riwayat_user.php";
+}
+
 ?>

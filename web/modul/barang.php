@@ -28,8 +28,18 @@
             $query = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE NOW() >= tgl_buka AND NOW() <= tgl_tutup order by tgl_buka DESC";
             $execute = mysqli_query($koneksi,$query);
 
+            $total_brg = mysqli_num_rows($execute);
+
+            if ($total_brg<=0) {
+            echo"<h1>Tidak ada lelang berlangsung</h1>";
+            }
+
             while($data = mysqli_fetch_array($execute)){
         ?>
+
+
+            
+
             <div class="col-6 col-md-4 col-lg-4">
             <div class="item">
                 <div>
