@@ -4,14 +4,13 @@
         <div class="col-md-3">
         <div class="side-box mb-5">
             <h3>Categories</h3>
-            <?=$_SESSION['nama']?>
             <ul class="list-unstyled auction-categories">
             <?php 
             $query = "SELECT * FROM kategori order by id_kategori DESC";
             $execute = mysqli_query($koneksi,$query);            
 
             while($data = mysqli_fetch_array($execute)){
-            $jml_brg = mysqli_query($koneksi,"SELECT * FROM barang WHERE id_kategori = '$data[id_kategori]'");
+            $jml_brg = mysqli_query($koneksi,"SELECT * FROM barang WHERE NOW() >= tgl_buka AND NOW() <= tgl_tutup AND id_kategori = '$data[id_kategori]'");
             
             $jml = mysqli_num_rows($jml_brg);
             ?>
@@ -26,7 +25,7 @@
 
         <?php 
             $date = date('Y-m-d');
-            $query = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE $date <= tgl_tutup AND status='open' order by tgl_buka DESC";
+            $query = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE NOW() >= tgl_buka AND NOW() <= tgl_tutup order by tgl_buka DESC";
             $execute = mysqli_query($koneksi,$query);
 
             while($data = mysqli_fetch_array($execute)){
@@ -47,8 +46,18 @@
                     <span>Sampai</span>
                     <span class="ml-auto"><?=$data['tgl_tutup']?></span>
                 </div>
-                <a href="main.php?page=item&&id=<?=$data['id_barang']?>" class="btn  btn-primary">Input Penawaran</a>
+                <?php
+                if (empty($_SESSION['id_user']) AND empty($_SESSION['password'])){
+                ?>
+                    <a href="" onClick="return alert('Anda harus login terlebih dahulu!')" class="btn  btn-primary">Input Penawaran</a>
                 </div>
+                <?php
+                } else {
+                ?>
+                    <a href="main.php?page=item&id=<?=$data['id_barang']?>" class="btn  btn-primary">Input Penawaran</a>
+                <?php
+                }
+                ?>
 
             </div>
             </div>

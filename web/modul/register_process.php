@@ -9,6 +9,8 @@ $alamat     = $_POST['alamat'];
 $password   = $_POST['password'];
 $password2  = $_POST['password2'];
 $level      = $_POST['level'];
+$bank      = $_POST['bank'];
+$norek      = $_POST['norek'];
 
 if($password == $password2)
 {
@@ -28,6 +30,11 @@ if($password == $password2)
     $insert_detail = mysqli_query($koneksi,
         "INSERT INTO detail_member (id_user, saldo) VALUES (
         '$last_id', 0)"
+    );
+
+    $insert_bank = mysqli_query($koneksi,
+        "INSERT INTO rekening (id_user, bank, norek) VALUES (
+        '$last_id', '$bank', '$norek')"
     );
 
     if($insert) {

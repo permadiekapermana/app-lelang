@@ -27,6 +27,8 @@
     <div class="col-lg-5">
         <h2 class="mb-5 text-black"><strong>Registrasi</strong></h2>
 
+        <h5 class="mb-1 text-black"><strong>Data Pribadi</strong></h5>
+
         <form method="POST" action="modul/register_process.php">
         <div class="row">
             <div class="col-md-12 form-group">
@@ -78,6 +80,29 @@
             <div class="col-md-12 form-group">
             <label for="fpass2">Re-type Password</label>
             <input required type="password" placeholder="Masukkan Ulang Password" id="fpass2" name="password2" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <h5 class="mb-1 text-black"><strong>Data Rekening</strong></h5>
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <label for="bank">Bank</label>
+                <select class="form-control form-control-lg" name="bank" required>
+                    <option value="">-- Pilih Bank</option>
+                    <option value="BNI">BNI</option>
+                    <option value="BRI">BRI</option>
+                    <option value="BTN">BTN</option>
+                    <option value="Mandiri">Mandiri</option>
+                    <option value="BCA">BCA</option>
+                </select>                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+            <label for="norek">Nomor Rekening</label>
+            <input required type="number" id="norek" name="norek" placeholder="Masukkan Nomor Rekening" class="form-control form-control-lg">
             </div>
         </div>
         
