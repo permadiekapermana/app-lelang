@@ -48,7 +48,7 @@ session_start();
           $ketemu = mysqli_fetch_array($sql);
           $saldo  = $ketemu['saldo'];
         ?>
-          <h6 class="text-white"><b>Saldo</b> : Rp. <?=$saldo?> |  <button class="btn-sm btn-success"><a href="#" class="text-white">Akun Saya</a></button><button class="btn-sm btn-danger"> <a href="modul/logout.php" class="text-white" onClick="return confirm('Are you sure ?')">Logout</a> </button></h6>
+          <h6 class="text-white"><b>Saldo</b> : Rp. <?=$saldo?> |  <button class="btn-sm btn-success"><a href="?page=akun" class="text-white">Akun Saya</a></button><button class="btn-sm btn-danger"> <a href="modul/logout.php" class="text-white" onClick="return confirm('Are you sure ?')">Logout</a> </button></h6>
         <?php
         }
         ?>

@@ -36,4 +36,8 @@ if($page == 'riwayat_user'){
   include "modul/riwayat_user.php";
 }
 
+if($page == 'akun'){
+  include "modul/akun.php";
+}
+
 ?>

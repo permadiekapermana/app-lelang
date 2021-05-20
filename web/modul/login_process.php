@@ -37,13 +37,18 @@ if (isset($_POST['login'])) {
         $_SESSION['status']   = $r['status'];
         $_SESSION['role']    = $r['role'];
         
-        if ($r['role'=='member']){
+        if ($r['role']=='member'){
             // var_dump($_SESSION);
             header('location:../main.php');
-        } elseif ($r['level']=='pelelang') {
+            // echo"Ini page member";
+            // var_dump($_SESSION['role']);
+        } elseif ($r['role']=='pelelang') {
             // .....
-        } elseif ($r['level']=='admin') {
-            // ....
+            header('location:../../admin/production/page.php?module=dashboard');
+        } elseif ($r['role']=='admin') {
+            header('location:../../admin/production/page.php?module=dashboard');
+            // echo"Ini page admin";
+            // var_dump($_SESSION['role']);
         }
     }
     elseif ($ketemu2 > 0){
