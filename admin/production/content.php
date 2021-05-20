@@ -38,6 +38,21 @@ elseif ($_GET['module']=='member'  && $_GET['method']=='detail'){
    include "modul/mod_member/detail_member.php";
  }
 }
+elseif ($_GET['module']=='kategori'  && $_GET['method']==''){
+  if ($_SESSION['role']=='admin'){
+   include "modul/mod_kategori/kategori.php";
+ }
+}
+elseif ($_GET['module']=='kategori' && $_GET['method']=='add'){
+  if ($_SESSION['role']=='admin'){
+   include "modul/mod_kategori/add.php";
+ }
+}
+elseif ($_GET['module']=='kategori' && $_GET['method']=='edit'){
+  if ($_SESSION['role']=='admin'){
+   include "modul/mod_kategori/edit.php";
+ }
+}
 
 
 elseif ($_GET['module']=='pembeli'){
