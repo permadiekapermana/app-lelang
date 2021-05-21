@@ -53,6 +53,21 @@ elseif ($_GET['module']=='kategori' && $_GET['method']=='edit'){
    include "modul/mod_kategori/edit.php";
  }
 }
+elseif ($_GET['module']=='barang'  && $_GET['method']==''){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_barang/barang.php";
+ }
+}
+elseif ($_GET['module']=='barang' && $_GET['method']=='add'){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_barang/add.php";
+ }
+}
+elseif ($_GET['module']=='barang' && $_GET['method']=='edit'){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_barang/edit.php";
+ }
+}
 
 
 elseif ($_GET['module']=='pembeli'){

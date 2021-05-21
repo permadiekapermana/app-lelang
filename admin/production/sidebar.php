@@ -91,7 +91,7 @@
     </a>
     </li>
     <li class="nav-item">
-    <a href="?module=dashboard" class="nav-link">
+    <a href="?module=barang" class="nav-link">
         <i class="nav-icon fas fa-xxx"></i>
         <p>
         Data Barang

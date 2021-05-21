@@ -47,7 +47,7 @@
                 <a href="main.php?page=item&&id=<?=$data['id_barang']?>"><img width="300px" src="../img/<?=$data['foto']?>" alt="Image" class="img-fluid"></a>
                 </div>
                 <div class="p-4">
-                <h3><a href="main.php?page=item&&id=<?=$data['id']?>"><?=$data['nama_barang']?></a></h3>
+                <h3><a href="main.php?page=item&&id=<?=$data['id_barang']?>"><?=$data['nama_barang']?></a></h3>
                 <div class="d-flex mb-2">
                     <span><?=$data['kategori']?></span>
                     <span class="ml-auto">Rp. <?=number_format($data['harga_buka'])?></span>
