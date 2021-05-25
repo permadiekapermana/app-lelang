@@ -62,6 +62,12 @@
         <a href="../index2.html" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Lelang Berlangsung</p>
+            <?php
+            $qry = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE status='open' order by tgl_buka DESC";
+            $execute = mysqli_query($koneksi,$qry);
+            $sum_lelangongoing = mysqli_num_rows($execute);
+            ?>
+            <span class="badge badge-info right"><?= $sum_lelangongoing ?></span>
         </a>
         </li>
         <li class="nav-item">
@@ -108,15 +114,29 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-        <a href="../index2.html" class="nav-link">
+        <a href="?module=lelang-ongoing" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Lelang Berlangsung</p>
+            <?php
+            $qry = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE id_user='$_SESSION[id_user]' AND status='open' order by tgl_buka DESC";
+            $execute = mysqli_query($koneksi,$qry);
+            $sum_lelangongoing = mysqli_num_rows($execute);
+            ?>
+            <span class="badge badge-info right"><?= $sum_lelangongoing ?></span>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="?module=lelang-ongoing" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Pengiriman Barang</p>
+            <span class="badge badge-info right">0</span>
         </a>
         </li>
         <li class="nav-item">
         <a href="../index3.html" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Lelang Selesai</p>
+            <span class="badge badge-info right">0</span>
         </a>
         </li>
     </ul>

@@ -68,6 +68,21 @@ elseif ($_GET['module']=='barang' && $_GET['method']=='edit'){
    include "modul/mod_barang/edit.php";
  }
 }
+elseif ($_GET['module']=='lelang-ongoing' && $_GET['method']==''){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_lelang/lelang.php";
+ }
+}
+elseif ($_GET['module']=='lelang-ongoing' && $_GET['method']=='info-bidder'){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_lelang/info-bidder.php";
+ }
+}
+elseif ($_GET['module']=='lelang-ongoing' && $_GET['method']=='action'){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_lelang/action.php";
+ }
+}
 
 
 elseif ($_GET['module']=='pembeli'){
