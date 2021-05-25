@@ -39,7 +39,7 @@
                     $date = date('Y-m-d');
                     if ($date>=$list['tgl_tutup']) {
                     ?>
-                    <a href="?module=lelang-ongoing&&method=action&id=<?=$list['id_barang']?>&act=win" class="btn btn-sm btn-success">Tentukan Pemenang</a> &nbsp;
+                    <a href="?module=lelang-ongoing&&method=action&id=<?=$list['id_barang']?>&act=win" class="btn btn-sm btn-success" onClick="return confirm('Apakah anda yakin ingin mengakhiri lelang dan menentukan pemenang lelang ?')">Tentukan Pemenang</a> &nbsp;
                     <?php
                     }
                     ?>                    
