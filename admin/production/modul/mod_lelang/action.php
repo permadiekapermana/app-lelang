@@ -34,7 +34,7 @@ if($act == 'win') {
     } else {
         //tampil alert dan akan redirect ke halaman index.php
         //silahkan ganti index.php sesuai halaman yang akan dituju
-        echo "<script>alert('Lelang Selesai! Silahkan Kirim barang ke pemenang!');window.location='../../page.php?module=pengiriman&&method=';</script>";
+        echo "<script>alert('Lelang Selesai! Silahkan Kirim barang ke pemenang!');window.location='page.php?module=pengiriman&&method=';</script>";
     }
 
 }

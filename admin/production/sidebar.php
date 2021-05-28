@@ -51,7 +51,7 @@
     </li>
     <li class="nav-item">
     <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-cart"></i>
+        <i class="nav-icon fas fa-arrow-right"></i>
         <p>
         Data Lelang
         <i class="right fas fa-angle-left"></i>
@@ -78,6 +78,22 @@
         </li>
     </ul>
     </li>
+    <li class="nav-item">
+    <a href="?module=dashboard" class="nav-link">
+        <i class="nav-icon fas fa-money-bill"></i>
+        <p>
+        Withdraw Saldo
+        </p>
+    </a>
+    </li>
+    <!-- <li class="nav-item">
+    <a href="?module=dashboard" class="nav-link">
+        <i class="nav-icon fas fa-file-invoice-dollar"></i>
+        <p>
+        Invoice Lelang
+        </p>
+    </a>
+    </li> -->
     
 </ul>
 </nav>
@@ -98,7 +114,7 @@
     </li>
     <li class="nav-item">
     <a href="?module=barang" class="nav-link">
-        <i class="nav-icon fas fa-xxx"></i>
+        <i class="nav-icon fas fa-shopping-cart"></i>
         <p>
         Data Barang
         </p>
@@ -106,7 +122,7 @@
     </li>
     <li class="nav-item">
     <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-cart"></i>
+        <i class="nav-icon fas fa-arrow-right"></i>
         <p>
         Transaksi Lelang
         <i class="right fas fa-angle-left"></i>
@@ -126,10 +142,15 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="?module=lelang-ongoing" class="nav-link">
+        <a href="?module=pengiriman" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Pengiriman Barang</p>
-            <span class="badge badge-info right">0</span>
+            <?php
+            $qry2 = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN users ON lelang.id_user=users.id_user INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Menunggu Pengiriman' OR status_kirim='Dalam Pengiriman') AND barang.id_user='$_SESSION[id_user]'";
+            $execute2 = mysqli_query($koneksi,$qry2);
+            $sum_kirim = mysqli_num_rows($execute2);
+            ?>
+            <span class="badge badge-info right"><?= $sum_kirim ?></span>
         </a>
         </li>
         <li class="nav-item">
@@ -143,12 +164,20 @@
     </li>
     <li class="nav-item">
     <a href="?module=dashboard" class="nav-link">
-        <i class="nav-icon fas fa-xxx"></i>
+        <i class="nav-icon fas fa-money-bill"></i>
+        <p>
+        Riwayat Saldo
+        </p>
+    </a>
+    </li>
+    <!-- <li class="nav-item">
+    <a href="?module=dashboard" class="nav-link">
+        <i class="nav-icon fas fa-file-invoice-dollar"></i>
         <p>
         Invoice Lelang
         </p>
     </a>
-    </li>
+    </li> -->
 
 </ul>
 </nav>

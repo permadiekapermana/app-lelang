@@ -83,6 +83,21 @@ elseif ($_GET['module']=='lelang-ongoing' && $_GET['method']=='action'){
    include "modul/mod_lelang/action.php";
  }
 }
+elseif ($_GET['module']=='pengiriman' && $_GET['method']==''){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_pengiriman/pengiriman.php";
+ }
+}
+elseif ($_GET['module']=='pengiriman' && $_GET['method']=='resi'){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_pengiriman/resi.php";
+ }
+}
+elseif ($_GET['module']=='invoice' && $_GET['method']==''){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_invoice/cetak_invoice.php";
+ }
+}
 
 
 elseif ($_GET['module']=='pembeli'){

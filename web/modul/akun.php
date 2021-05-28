@@ -6,7 +6,7 @@
             <h3 class="mb-2">Akun Saya</h3>
             <ul class="list-unstyled auction-categories">
                 <li><a href="?page=akun">Profil</a></li>
-                <li><a href="#">Riwayat Topup Saldo</a></li>
+                <li><a href="#">Riwayat Saldo</a></li>
                 <li><a href="#">Notifikasi Menang Lelang (0)</a></li>
                 <li><a href="#">Barang Dalam Pengiriman (0)</a></li>
                 <li><a href="#">Lelang Selesai (0)</a></li>
@@ -27,7 +27,7 @@
         <div class="card" style="width: 60rem;">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">            
-            <h5>Saldo : Rp. <?php echo"$data[saldo]"; ?></h5> <a href="#" class="btn btn-sm btn-primary">Top Up Saldo</a>
+            <h5>Saldo : Rp. <?php echo"$data[saldo]"; ?></h5> <a href="#" class="btn btn-sm btn-primary">Top Up Saldo</a> <a href="#" class="btn btn-sm btn-secondary">Tarik Saldo</a>
             <h5 class="card-title mt-5">Permadi Eka Permana</h5>
             <table class='table'>
                 <tr>

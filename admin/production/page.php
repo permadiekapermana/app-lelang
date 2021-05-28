@@ -90,6 +90,13 @@ elseif (empty($_SESSION['id_user']) AND empty($_SESSION['id_user'])){
         </div>
         <div class="info">
           <a href="#" class="d-block"><?php echo"$_SESSION[nama]"; ?></a>
+          <?php
+          if($_SESSION['role']=='pelelang') {
+          ?>
+          <a href="#" class="d-block">Rp. 1000.000</a>
+          <?php
+          }
+          ?>
         </div>
       </div>
 
