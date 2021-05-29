@@ -154,10 +154,15 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="../index3.html" class="nav-link">
+        <a href="?module=pengiriman-selesai" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Lelang Selesai</p>
-            <span class="badge badge-info right">0</span>
+            <?php
+            $qry3 = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN users ON lelang.id_user=users.id_user INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Selesai') AND barang.id_user='$_SESSION[id_user]'";
+            $execute3 = mysqli_query($koneksi,$qry3);
+            $sum_selesai = mysqli_num_rows($execute3);
+            ?>
+            <span class="badge badge-info right"><?= $sum_selesai ?></span>
         </a>
         </li>
     </ul>

@@ -93,6 +93,11 @@ elseif ($_GET['module']=='pengiriman' && $_GET['method']=='resi'){
    include "modul/mod_pengiriman/resi.php";
  }
 }
+elseif ($_GET['module']=='pengiriman-selesai' && $_GET['method']==''){
+  if ($_SESSION['role']=='pelelang'){
+   include "modul/mod_pengiriman/pengiriman-selesai.php";
+ }
+}
 elseif ($_GET['module']=='invoice' && $_GET['method']==''){
   if ($_SESSION['role']=='pelelang'){
    include "modul/mod_invoice/cetak_invoice.php";

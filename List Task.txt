@@ -8,15 +8,15 @@ User Member
 - Invoice
 
 Pelelang
-- Dashboard
+- Dashboard (done)
 - Pengiriman Barang (done)
-- Lelang Selesai
+- Lelang Selesai (done)
 - Invoice
 - Saldo
 - Tarik Saldo
 
 Admin
-- Dashboard
+- Dashboard (done)
 - Pengiriman Barang
 - Lelang Selesai
 - Invoice
@@ -24,7 +24,7 @@ Admin
 - Riwayat Saldo
 
 bug refund saldo
-tambah jenis ekspedisi
+tambah jenis ekspedisi (done)
 kontak (hold dulu)
 
 harga tertinggi pas lelang 0

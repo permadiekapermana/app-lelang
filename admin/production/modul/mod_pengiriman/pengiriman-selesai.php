@@ -18,7 +18,7 @@
     </thead>
     <tbody>
     <?php
-        $qry = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Menunggu Pengiriman' OR status_kirim='Dalam Pengiriman') AND barang.id_user='$_SESSION[id_user]'";
+        $qry = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Selesai') AND barang.id_user='$_SESSION[id_user]'";
         $execute = mysqli_query($koneksi,$qry); 
         $no = 1;
         while($list = mysqli_fetch_array($execute)){
@@ -52,9 +52,7 @@
             <td align="center">
                 <div class="btn-group">                 
                     <a href="?module=lelang-ongoing&&method=info-bidder&id=<?=$list['id_barang']?>" class="btn btn-sm btn-primary">Info Bidder</a> &nbsp;
-                    <form action="modul/mod_invoice/cetak_invoice.php" method="POST" target="_blank">
-                        <button type="submit" class="btn btn-sm btn-success">Invoice</button>
-                    </form>
+                    <a href="modul/mod_invoice/cetak_invoice.php" target="_blank" class="btn btn-sm btn-success">Invoice</a> &nbsp;                    
                 </div>
             </td>
         </tr>  
