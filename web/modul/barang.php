@@ -36,13 +36,9 @@
 
             while($data = mysqli_fetch_array($execute)){
         ?>
-
-
-            
-
             <div class="col-6 col-md-4 col-lg-4">
             <div class="item">
-                <div>
+            <div>
                 
                 <a href="main.php?page=item&&id=<?=$data['id_barang']?>"><img width="300px" src="../img/<?=$data['foto']?>" alt="Image" class="img-fluid"></a>
                 </div>
@@ -60,7 +56,7 @@
                 if (empty($_SESSION['id_user']) AND empty($_SESSION['password'])){
                 ?>
                     <a href="" onClick="return alert('Anda harus login terlebih dahulu!')" class="btn  btn-primary">Input Penawaran</a>
-                </div>
+                
                 <?php
                 } else {
                 ?>
@@ -68,6 +64,7 @@
                 <?php
                 }
                 ?>
+                </div>
 
             </div>
             </div>

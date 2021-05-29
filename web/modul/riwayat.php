@@ -33,8 +33,7 @@
         ?>
             <div class="col-6 col-md-4 col-lg-4">
             <div class="item">
-                <div>
-                
+                <div>                
                 <a href="main.php?page=item&&id=<?=$data['id_barang']?>"><img width="300px" src="../img/<?=$data['foto']?>" alt="Image" class="img-fluid"></a>
                 </div>
                 <div class="p-4">
