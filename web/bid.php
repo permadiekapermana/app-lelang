@@ -24,9 +24,9 @@ $user_lastbid = $item2['id_user'];
 $query_userlastbid = "SELECT * FROM detail_member WHERE id_user='$user_lastbid'";
 $execute3 = mysqli_query($koneksi,$query_userlastbid);
 $item3 = mysqli_fetch_array($execute3);
-$total_saldo = $item3['saldo'] + $harga_tawar;
+$total_saldo = $item3['saldo'] + $item2['harga_tawar'];
 
-// var_dump($lastbid);
+// var_dump($user_lastbid);
 
 if(empty($harga_tawar)){
     echo "<script>alert('Lengkapi Data Anda.');window.location='main.php?page=item&&id=$id';</script>";
@@ -45,17 +45,25 @@ if(empty($harga_tawar)){
         $query_changelastbid = "UPDATE lelang SET status='refund' WHERE id_user = $user_lastbid";        
         $excute_lastbid = mysqli_query($koneksi,$query_changelastbid);
 
-        $query_refund = "UPDATE detail_member SET saldo=$total_saldo WHERE id_user = $user_lastbid";        
+        $query_refund = "UPDATE detail_member SET saldo='$total_saldo' WHERE id_user='$user_lastbid'";        
         $excute_refund = mysqli_query($koneksi,$query_refund);
     }
     
     $excute = mysqli_query($koneksi,$query);
 
+    $query_member5 = "SELECT * FROM detail_member JOIN users ON users.id_user = detail_member.id_user WHERE detail_member.id_user = '$id_user'";
+    $execute5 = mysqli_query($koneksi,$query_member5); //var_dump($execute);
+    $user5 = mysqli_fetch_array($execute5);
+    $saldo5 = $user5['saldo'];
+
     // query update data saldo member
-    $update_balance = $saldo - $harga_tawar;
-    $query_updatesaldo = "UPDATE detail_member SET saldo=$update_balance";    
+    $update_balance = $saldo5 - $harga_tawar;
+    $query_updatesaldo = "UPDATE detail_member SET saldo='$update_balance' WHERE id_user='$id_user'";    
     $excute_updatesaldo = mysqli_query($koneksi,$query_updatesaldo);
-    if($excute){
+    // var_dump($saldo);
+    // var_dump($harga_tawar);
+    // var_dump($update_balance);
+    if($excute_updatesaldo){
         echo "<script>alert('Tawaran Masuk Antrian.');window.location='main.php?page=item&id=$id';</script>";
     }
     
