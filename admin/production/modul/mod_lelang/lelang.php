@@ -20,7 +20,11 @@
     </thead>
     <tbody>
     <?php
+        if($_SESSION['role']=='pelelang'){
         $qry = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE id_user='$_SESSION[id_user]' AND status='open' order by tgl_buka DESC";
+        } else {
+            $qry = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE status='open' order by tgl_buka DESC";
+        }
         $execute = mysqli_query($koneksi,$qry); 
         $no = 1;
         while($list = mysqli_fetch_array($execute)){
@@ -39,7 +43,13 @@
                     $date = date('Y-m-d');
                     if ($date>=$list['tgl_tutup']) {
                     ?>
+                    <?php
+                    if($_SESSION['role']=='pelelang'){
+                    ?>
                     <a href="?module=lelang-ongoing&&method=action&id=<?=$list['id_barang']?>&act=win" class="btn btn-sm btn-success" onClick="return confirm('Apakah anda yakin ingin mengakhiri lelang dan menentukan pemenang lelang ?')">Tentukan Pemenang</a> &nbsp;
+                    <?php
+                    }
+                    ?>
                     <?php
                     }
                     ?>                    

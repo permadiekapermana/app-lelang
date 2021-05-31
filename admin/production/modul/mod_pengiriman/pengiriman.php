@@ -18,7 +18,11 @@
     </thead>
     <tbody>
     <?php
+        if($_SESSION['role']=='pelelang'){
         $qry = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Menunggu Pengiriman' OR status_kirim='Dalam Pengiriman') AND barang.id_user='$_SESSION[id_user]'";
+        } else {
+            $qry = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Menunggu Pengiriman' OR status_kirim='Dalam Pengiriman')";
+        }
         $execute = mysqli_query($koneksi,$qry); 
         $no = 1;
         while($list = mysqli_fetch_array($execute)){
@@ -38,7 +42,7 @@
             }
             ?>
             <?php
-            if($list['no_resi']==NULL) {
+            if($list['no_resi']==NULL AND $_SESSION['role']=='pelelang') {
             ?>
             <td><a href="?module=pengiriman&&method=resi&id=<?=$list['id_kirim']?>" class="btn btn-sm btn-primary">Input Nomor Resi</a></td>
             <?php

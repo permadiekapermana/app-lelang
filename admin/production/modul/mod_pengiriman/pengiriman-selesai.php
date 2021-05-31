@@ -18,7 +18,11 @@
     </thead>
     <tbody>
     <?php
+        if($_SESSION['role']=='pelelang'){
         $qry = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Selesai') AND barang.id_user='$_SESSION[id_user]'";
+        } else {
+            $qry = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Selesai')";
+        }
         $execute = mysqli_query($koneksi,$qry); 
         $no = 1;
         while($list = mysqli_fetch_array($execute)){

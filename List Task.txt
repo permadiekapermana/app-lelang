@@ -17,9 +17,9 @@ Pelelang
 
 Admin
 - Dashboard (done)
-- Pengiriman Barang
-- Lelang Selesai
-- Invoice
+- Pengiriman Barang (done)
+- Lelang Selesai (done)
+- Invoice (done)
 - Permintaan Tarik Saldo
 - Riwayat Saldo
 
