@@ -11,7 +11,7 @@ Pelelang
 - Dashboard (done)
 - Pengiriman Barang (done)
 - Lelang Selesai (done)
-- Invoice
+- Invoice (done)
 - Saldo
 - Tarik Saldo
 

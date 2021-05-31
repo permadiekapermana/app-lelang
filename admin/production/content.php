@@ -69,32 +69,32 @@ elseif ($_GET['module']=='barang' && $_GET['method']=='edit'){
  }
 }
 elseif ($_GET['module']=='lelang-ongoing' && $_GET['method']==''){
-  if ($_SESSION['role']=='pelelang'){
+  if ($_SESSION['role']=='pelelang'  OR $_SESSION['role']=='admin'){
    include "modul/mod_lelang/lelang.php";
  }
 }
 elseif ($_GET['module']=='lelang-ongoing' && $_GET['method']=='info-bidder'){
-  if ($_SESSION['role']=='pelelang'){
+  if ($_SESSION['role']=='pelelang'  OR $_SESSION['role']=='admin'){
    include "modul/mod_lelang/info-bidder.php";
  }
 }
 elseif ($_GET['module']=='lelang-ongoing' && $_GET['method']=='action'){
-  if ($_SESSION['role']=='pelelang'){
+  if ($_SESSION['role']=='pelelang'  OR $_SESSION['role']=='admin'){
    include "modul/mod_lelang/action.php";
  }
 }
 elseif ($_GET['module']=='pengiriman' && $_GET['method']==''){
-  if ($_SESSION['role']=='pelelang'){
+  if ($_SESSION['role']=='pelelang'  OR $_SESSION['role']=='admin'){
    include "modul/mod_pengiriman/pengiriman.php";
  }
 }
 elseif ($_GET['module']=='pengiriman' && $_GET['method']=='resi'){
-  if ($_SESSION['role']=='pelelang'){
+  if ($_SESSION['role']=='pelelang' OR $_SESSION['role']=='admin'){
    include "modul/mod_pengiriman/resi.php";
  }
 }
 elseif ($_GET['module']=='pengiriman-selesai' && $_GET['method']==''){
-  if ($_SESSION['role']=='pelelang'){
+  if ($_SESSION['role']=='pelelang' OR $_SESSION['role']=='admin'){
    include "modul/mod_pengiriman/pengiriman-selesai.php";
  }
 }

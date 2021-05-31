@@ -53,13 +53,13 @@
     <a href="#" class="nav-link">
         <i class="nav-icon fas fa-arrow-right"></i>
         <p>
-        Data Lelang
+        Transaksi Lelang
         <i class="right fas fa-angle-left"></i>
         </p>
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-        <a href="../index2.html" class="nav-link">
+        <a href="?module=lelang-ongoing" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Lelang Berlangsung</p>
             <?php
@@ -71,9 +71,27 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="../index3.html" class="nav-link">
+        <a href="?module=pengiriman" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Pengiriman Barang</p>
+            <?php
+            $qry2 = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN users ON lelang.id_user=users.id_user INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Menunggu Pengiriman' OR status_kirim='Dalam Pengiriman')";
+            $execute2 = mysqli_query($koneksi,$qry2);
+            $sum_kirim = mysqli_num_rows($execute2);
+            ?>
+            <span class="badge badge-info right"><?= $sum_kirim ?></span>
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="?module=pengiriman-selesai" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Lelang Selesai</p>
+            <?php
+            $qry3 = "SELECT * FROM kirim_barang INNER JOIN lelang ON kirim_barang.id_lelang=lelang.id_lelang INNER JOIN users ON lelang.id_user=users.id_user INNER JOIN barang ON lelang.id_barang=barang.id_barang WHERE (status_kirim='Selesai')";
+            $execute3 = mysqli_query($koneksi,$qry3);
+            $sum_selesai = mysqli_num_rows($execute3);
+            ?>
+            <span class="badge badge-info right"><?= $sum_selesai ?></span>
         </a>
         </li>
     </ul>

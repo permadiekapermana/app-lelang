@@ -1,14 +1,41 @@
-<?php
-include_once "../../../../config/koneksi.php";
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Invoice Pemenang Lelang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<title>A simple, clean, and responsive HTML invoice template</title>
+
+		<!-- Favicon -->
+		<link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+
+		<!-- Invoice styling -->
 		<style>
+			body {
+				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+				text-align: center;
+				color: #777;
+			}
+
+			body h1 {
+				font-weight: 300;
+				margin-bottom: 0px;
+				padding-bottom: 0px;
+				color: #000;
+			}
+
+			body h3 {
+				font-weight: 300;
+				margin-top: 10px;
+				margin-bottom: 20px;
+				font-style: italic;
+				color: #555;
+			}
+
+			body a {
+				color: #06f;
+			}
+
 			.invoice-box {
 				max-width: 800px;
 				margin: auto;
@@ -25,6 +52,7 @@ include_once "../../../../config/koneksi.php";
 				width: 100%;
 				line-height: inherit;
 				text-align: left;
+				border-collapse: collapse;
 			}
 
 			.invoice-box table td {
@@ -86,44 +114,29 @@ include_once "../../../../config/koneksi.php";
 					text-align: center;
 				}
 			}
-
-			/** RTL **/
-			.invoice-box.rtl {
-				direction: rtl;
-				font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-			}
-
-			.invoice-box.rtl table {
-				text-align: right;
-			}
-
-			.invoice-box.rtl table tr td:nth-child(2) {
-				text-align: left;
-			}
 		</style>
 	</head>
 
 	<body>
+		<h1>A simple, clean, and responsive HTML invoice template</h1>
+		<h3>Because sometimes, all you need is something simple.</h3>
+		Find the code on <a href="https://github.com/sparksuite/simple-html-invoice-template">GitHub</a>. Licensed under the
+		<a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>.<br /><br /><br />
+
 		<div class="invoice-box">
-			<table cellpadding="0" cellspacing="0">
+			<table>
 				<tr class="top">
 					<td colspan="2">
 						<table>
 							<tr>
 								<td class="title">
-									<img src="https://www.sparksuite.com/images/logo.png" style="width: 100%; max-width: 300px" />
+									<img src="./images/logo.png" alt="Company logo" style="width: 100%; max-width: 300px" />
 								</td>
 
-								<?php
-									$id         = $_POST['id'];
-									$currentDate = date('Y-m-d');
-									$currentTime = date('H:i:s');
-								?>
-
 								<td>
-									Invoice #: <?=$id?><br />
-									Tanggal: <?=$currentDate?><br />
-									Jam: <?=$currentTime?><br />
+									Invoice #: 123<br />
+									Created: January 1, 2015<br />
+									Due: February 1, 2015
 								</td>
 							</tr>
 						</table>
@@ -135,19 +148,15 @@ include_once "../../../../config/koneksi.php";
 						<table>
 							<tr>
 								<td>
-									CV. Sistem Lelang Online<br />
-									Cirebon, Jawa Barat<br />
-									Nomor WA : 089-999-999-999
+									Sparksuite, Inc.<br />
+									12345 Sunny Road<br />
+									Sunnyville, TX 12345
 								</td>
-								<?php
-								$query_pelelang = "SELECT * FROM users INNER JOIN barang ON users.id_user=barang.id_user WHERE id_barang = '$id'";
-								$execute_pelelang = mysqli_query($koneksi,$query_pelelang);
-								$data = mysqli_fetch_array($execute_pelelang);
-								?>
+
 								<td>
-									<b>Pelelang :</b><br />
-									<?=$data['nama']?><br />
-									No. HP / WA : <?=$data['no_hp']?>
+									Acme Corp.<br />
+									John Doe<br />
+									john@example.com
 								</td>
 							</tr>
 						</table>
@@ -155,45 +164,47 @@ include_once "../../../../config/koneksi.php";
 				</tr>
 
 				<tr class="heading">
-					<td>Nama Pemenang</td>
+					<td>Payment Method</td>
 
-					<td> </td>
+					<td>Check #</td>
 				</tr>
 
 				<tr class="details">
-					<?php
-					$query_pemenang = "SELECT * FROM lelang INNER JOIN users ON lelang.id_user=users.id_user WHERE id_barang = '$id' AND lelang.status='terpilih'";
-					$execute_pemenang = mysqli_query($koneksi,$query_pemenang);
-					$data1 = mysqli_fetch_array($execute_pemenang);
-					?>
-					<td><?=$data1['nama']?></td>
+					<td>Check</td>
 
-					<td> </td>
+					<td>1000</td>
 				</tr>
 
 				<tr class="heading">
 					<td>Item</td>
 
-					<td>Harga</td>
+					<td>Price</td>
 				</tr>
 
 				<tr class="item">
-					<td><?=$data['nama_barang']?></td>
+					<td>Website design</td>
 
-					<td><?=$data1['harga_tawar']?></td>
+					<td>$300.00</td>
 				</tr>
 
-				<!-- <tr class="total">
+				<tr class="item">
+					<td>Hosting (3 months)</td>
+
+					<td>$75.00</td>
+				</tr>
+
+				<tr class="item last">
+					<td>Domain name (1 year)</td>
+
+					<td>$10.00</td>
+				</tr>
+
+				<tr class="total">
 					<td></td>
 
 					<td>Total: $385.00</td>
-				</tr> -->
+				</tr>
 			</table>
 		</div>
-
-		<script>
-			window.print();
-		</script>
-
 	</body>
 </html>
