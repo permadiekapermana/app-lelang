@@ -40,4 +40,8 @@ if($page == 'akun'){
   include "modul/akun.php";
 }
 
+if($page == 'topup'){
+  include "modul/topup.php";
+}
+
 ?>
