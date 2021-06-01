@@ -56,4 +56,8 @@ if($page == 'dalam-pengiriman'){
   include "modul/dalam-pengiriman.php";
 }
 
+if($page == 'lelang-selesai'){
+  include "modul/lelang-selesai.php";
+}
+
 ?>
