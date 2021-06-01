@@ -48,4 +48,12 @@ if($page == 'edit-profil'){
   include "modul/edit-profil.php";
 }
 
+if($page == 'menang-lelang'){
+  include "modul/menang-lelang.php";
+}
+
+if($page == 'dalam-pengiriman'){
+  include "modul/dalam-pengiriman.php";
+}
+
 ?>

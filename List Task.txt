@@ -3,10 +3,10 @@ User Member
 - Edit Profil (done)
 - Tarik Saldo
 - Riwayat Saldo
-- Notif Menang
-- Barang dalam pengiriman
+- Notif Menang (done)
+- Barang dalam pengiriman (done)
 - Lelang Selesai
-- Invoice
+- Invoice (done)
 
 Pelelang
 - Dashboard (done)
