@@ -24,9 +24,9 @@ session_start();
           <li>
             <a href="main.php?page=riwayat" class="nav-link text-left">Riwayat Lelang</a>
           </li>                               
-          <li>
+          <!-- <li>
             <a href="main.php?page=kontak" class="nav-link text-left">Kontak</a>
-          </li>
+          </li> -->
         </ul>                                                                
       </nav>
 

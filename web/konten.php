@@ -44,4 +44,8 @@ if($page == 'topup'){
   include "modul/topup.php";
 }
 
+if($page == 'edit-profil'){
+  include "modul/edit-profil.php";
+}
+
 ?>

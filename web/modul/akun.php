@@ -5,11 +5,9 @@
         <div class="side-box mb-5">
             <h3 class="mb-2">Akun Saya</h3>
             <ul class="list-unstyled auction-categories">
-                <li><a href="?page=akun">Profil</a></li>
-                <li><a href="#">Riwayat Saldo</a></li>
-                <li><a href="#">Notifikasi Menang Lelang (0)</a></li>
-                <li><a href="#">Barang Dalam Pengiriman (0)</a></li>
-                <li><a href="#">Lelang Selesai (0)</a></li>
+                <?php
+                include "sidebar.php";
+                ?>
             </ul>
         </div>
         
@@ -28,7 +26,7 @@
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">            
             <h5>Saldo : Rp. <?php echo"$data[saldo]"; ?></h5> <a href="?page=topup" class="btn btn-sm btn-primary">Top Up Saldo</a> <a href="#" class="btn btn-sm btn-secondary">Tarik Saldo</a>
-            <h5 class="card-title mt-5">Permadi Eka Permana</h5>
+            <h5 class="card-title mt-5"><?php echo"$data[nama]"; ?></h5>
             <table class='table'>
                 <tr>
                 <th width='20%'>Email</th>
@@ -51,7 +49,7 @@
                 <td><?php echo"$data[role]"; ?></td>
                 </tr>
             </table>
-            <a href="#" class="btn btn-sm btn-success">Ubah Profil</a>
+            <a href="?page=edit-profil" class="btn btn-sm btn-success">Ubah Profil</a>
         </div>
         </div>
             
