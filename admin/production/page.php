@@ -92,8 +92,10 @@ elseif (empty($_SESSION['id_user']) AND empty($_SESSION['id_user'])){
           <a href="#" class="d-block"><?php echo"$_SESSION[nama]"; ?></a>
           <?php
           if($_SESSION['role']=='pelelang') {
+            $saldo_pelelang = mysqli_query($koneksi, "SELECT * FROM detail_member WHERE id_user='$_SESSION[id_user]'");
+            $s=mysqli_fetch_array($saldo_pelelang);
           ?>
-          <a href="#" class="d-block">Rp. 1000.000</a>
+          <a href="#" class="d-block">Rp. <?=$s['saldo']?></a>
           <?php
           }
           ?>

@@ -51,7 +51,7 @@
                         <td>
                             <div class="btn-group">
                                 <form action="modul/invoice/cetak_invoice.php" enctype='multipart/form-data' method="POST" target="_blank">
-                                    <input type="hidden" name="id" value="<?=$list['id_barang']?>">
+                                    <input type="text" name="id" value="<?=$list['id_barang']?>">
                                     <button type="submit" id="submit" name="submit" class="btn btn-sm btn-success">Invoice</button>
                                 </form>
                             </div>

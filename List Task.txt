@@ -5,7 +5,7 @@ User Member
 - Riwayat Saldo
 - Notif Menang (done)
 - Barang dalam pengiriman (done)
-- Lelang Selesai
+- Lelang Selesai (done)
 - Invoice (done)
 
 Pelelang

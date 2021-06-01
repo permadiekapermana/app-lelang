@@ -53,8 +53,11 @@
                                 <form action="modul/invoice/cetak_invoice.php" enctype='multipart/form-data' method="POST" target="_blank">
                                     <input type="hidden" name="id" value="<?=$list['id_barang']?>">
                                     <button type="submit" id="submit" name="submit" class="btn btn-sm btn-success">Invoice</button>
+                                </form> &nbsp;
+                                <form action="modul/proses-terima.php" enctype='multipart/form-data' method="POST">
+                                    <input type="hidden" name="id" value="<?=$list['id_barang']?>">
+                                    <button type="submit" id="submit" name="submit" class="btn btn-sm btn-primary" onClick="return confirm('Yakin ingin konfirmasi terima barang ?')">Terima Barang</button>
                                 </form>
-                                &nbsp;<a href="#" class="btn btn-sm btn-primary">Terima Barang</a>
                             </div>
                         </td>
                     </tr>  
