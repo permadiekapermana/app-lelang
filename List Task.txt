@@ -1,7 +1,7 @@
 User Member
 - Topup Saldo (Ahok)
 - Edit Profil (done)
-- Tarik Saldo
+- Tarik Saldo (done)
 - Riwayat Saldo
 - Notif Menang (done)
 - Barang dalam pengiriman (done)
@@ -23,9 +23,3 @@ Admin
 - Invoice (done)
 - Permintaan Tarik Saldo
 - Riwayat Saldo
-
-bug refund saldo (done)
-tambah jenis ekspedisi (done)
-kontak (hold dulu)
-
-harga tertinggi pas lelang 0

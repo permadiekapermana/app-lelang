@@ -97,7 +97,7 @@
     </ul>
     </li>
     <li class="nav-item">
-    <a href="?module=dashboard" class="nav-link">
+    <a href="?module=saldo" class="nav-link">
         <i class="nav-icon fas fa-money-bill"></i>
         <p>
         Withdraw Saldo
@@ -186,10 +186,10 @@
     </ul>
     </li>
     <li class="nav-item">
-    <a href="?module=dashboard" class="nav-link">
+    <a href="?module=saldo" class="nav-link">
         <i class="nav-icon fas fa-money-bill"></i>
         <p>
-        Riwayat Saldo
+        Withdraw Saldo
         </p>
     </a>
     </li>

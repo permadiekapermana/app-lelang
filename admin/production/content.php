@@ -103,90 +103,18 @@ elseif ($_GET['module']=='invoice' && $_GET['method']==''){
    include "modul/mod_invoice/cetak_invoice.php";
  }
 }
+elseif ($_GET['module']=='saldo' && $_GET['method']==''){
+  if ($_SESSION['role']=='pelelang' OR $_SESSION['role']=='admin'){
+   include "modul/mod_saldo/saldo.php";
+ }
+}
+elseif ($_GET['module']=='saldo' && $_GET['method']=='add'){
+  if ($_SESSION['role']=='admin'){
+   include "modul/mod_saldo/add.php";
+ }
+}
 
 
-elseif ($_GET['module']=='pembeli'){
-  if ($_SESSION['role']=='admin'){
-   include "modul/mod_pembeli/pembeli.php";
- }
-}
-elseif ($_GET['module']=='penjual'){
-  if ($_SESSION['role']=='admin'){
-   include "modul/mod_penjual/penjual.php";
- }
-}
-elseif ($_GET['module']=='kategori'){
-  if ($_SESSION['role']=='admin'){
-   include "modul/mod_kategori/kategori.php";
- }
-}
-elseif ($_GET['module']=='kota'){
-  if ($_SESSION['role']=='admin'){
-   include "modul/mod_kota/kota.php";
- }
-}
-elseif ($_GET['module']=='data_produk'){
-  if ($_SESSION['role']=='Penjual' OR $_SESSION['role']=='Pembeli'){
-   include "modul/mod_produk/produk.php";
- }
-}
-elseif ($_GET['module']=='cart'){
-  if ($_SESSION['role']=='Pembeli'){
-   include "modul/mod_cart/cart.php";
- }
-}
-elseif ($_GET['module']=='checkout'){
-  if ($_SESSION['role']=='Pembeli'){
-   include "modul/mod_cart/checkout.php";
- }
-}
-elseif ($_GET['module']=='pembayaran'){
-  if ($_SESSION['role']=='Pembeli' OR $_SESSION['role']=='admin'){
-   include "modul/mod_transaksi/pembayaran.php";
- }
-}
-elseif ($_GET['module']=='konfirmasi_pembayaran'){
-  if ($_SESSION['role']=='Pembeli' OR $_SESSION['role']=='admin'){
-   include "modul/mod_transaksi/konfirmasi_pembayaran.php";
- }
-}
-elseif ($_GET['module']=='pesanan'){
-  if ($_SESSION['role']=='Penjual'){
-   include "modul/mod_transaksi/pesanan.php";
- }
-}
-elseif ($_GET['module']=='pengiriman'){
-  if ($_SESSION['role']=='Penjual' OR $_SESSION['role']=='Pembeli' OR $_SESSION['role']=='admin'){
-   include "modul/mod_transaksi/pengiriman.php";
- }
-}
-elseif ($_GET['module']=='komplain'){
-  if ($_SESSION['role']=='Pembeli' OR $_SESSION['role']=='admin' OR $_SESSION['role']=='Penjual'){
-   include "modul/mod_transaksi/komplain.php";
- }
-}
-elseif ($_GET['module']=='history'){
-  if ($_SESSION['role']=='Penjual' OR $_SESSION['role']=='Pembeli' OR $_SESSION['role']=='admin'){
-   include "modul/mod_transaksi/history.php";
- }
-}
-elseif ($_GET['module']=='history_komplain'){
-  if ($_SESSION['role']=='Pembeli' OR $_SESSION['role']=='admin'  OR $_SESSION['role']=='Penjual'){
-   include "modul/mod_transaksi/history-komplain.php";
- }
-}
-elseif ($_GET['module']=='barang-view'){
-   include "modul/mod_produk_view/barang-view2.php";
- 
-}
-elseif ($_GET['module']=='detail'){
-  include "modul/mod_detail/detail.php";
-
-}
-elseif ($_GET['module']=='thanks'){
-  include "modul/mod_cart/thanks.php";
-
-}
 
 
 
