@@ -60,4 +60,8 @@ if($page == 'lelang-selesai'){
   include "modul/lelang-selesai.php";
 }
 
+if($page == 'riwayat-saldo'){
+  include "modul/riwayat-saldo.php";
+}
+
 ?>

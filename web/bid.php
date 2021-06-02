@@ -41,6 +41,7 @@ if(empty($harga_tawar)){
         '$id'
     )"; 
     
+    // ada lebih dari 0 pelelang
     if ($lastbid>0) {
         $query_changelastbid = "UPDATE lelang SET status='refund' WHERE id_user = $user_lastbid";        
         $excute_lastbid = mysqli_query($koneksi,$query_changelastbid);

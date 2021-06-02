@@ -25,7 +25,7 @@
         <div class="card" style="width: 60rem;">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">            
-            <h5>Saldo : Rp. <?php echo"$data[saldo]"; ?></h5> <a href="?page=topup" class="btn btn-sm btn-primary">Top Up Saldo</a> <a href="#" class="btn btn-sm btn-secondary">Tarik Saldo</a>
+            <h5>Saldo : Rp. <?php echo"$data[saldo]"; ?></h5> <a href="?page=topup" class="btn btn-sm btn-primary">Top Up Saldo</a> <a href="modul/withdraw_process.php" class="btn btn-sm btn-secondary">Tarik Saldo</a>
             <h5 class="card-title mt-5"><?php echo"$data[nama]"; ?></h5>
             <table class='table'>
                 <tr>
