@@ -24,7 +24,7 @@
 					$query = "SELECT * FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori WHERE status='close' order by tgl_buka DESC";
 					$execute = mysqli_query($koneksi,$query);
 					$total_brg = mysqli_num_rows($execute);
-
+					
 					$query2 = "SELECT DISTINCT barang.id_barang, barang.nama_barang, barang.harga_buka, barang.tgl_tutup, barang.foto, kategori.kategori FROM barang INNER JOIN kategori ON kategori.id_kategori=barang.id_kategori INNER JOIN lelang ON barang.id_barang=lelang.id_barang INNER JOIN users ON users.id_user=lelang.id_user WHERE barang.status='close' AND lelang.id_user='$_SESSION[id_user]' order by tgl_buka DESC";
 					$execute2 = mysqli_query($koneksi,$query2);
 					$total_brg_user = mysqli_num_rows($execute2);
