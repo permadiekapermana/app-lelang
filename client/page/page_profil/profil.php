@@ -18,21 +18,9 @@
         <div class="col-xl-3 col-lg-4 col-md-5">
             <div class="sidebar-categories">
                 <div class="head">Akun Saya</div>
-                <ul class="main-categories">
-                    <li class="main-nav-list"><a href="menu.php?page=profil">Profil</a>
-                    </li>
-                    <li class="main-nav-list"><a href="#">Riwayat Saldo</a>
-                    </li>
-                    <li class="main-nav-list"><a href="#"><span
-                                class="lnr lnr-arrow-right"></span>Notifikasi Menang Lelang<span class="number">(53)</span></a>
-                    </li>
-                    <li class="main-nav-list"><a href="#"><span
-                                class="lnr lnr-arrow-right"></span>Barang Dalam Pengiriman<span class="number">(53)</span></a>
-                    </li>
-                    <li class="main-nav-list"><a href="#"><span
-                                class="lnr lnr-arrow-right"></span>Lelang Selesai<span class="number">(53)</span></a>
-                    </li>
-                </ul>
+                <?php
+                    include "sidebar.php";
+                ?>
             </div>
             
         </div>

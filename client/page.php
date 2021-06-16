@@ -34,42 +34,20 @@ elseif ($_GET['page']=='riwayat'){
 elseif ($_GET['page']=='riwayat_user'){  
   include "page/page_riwayat/riwayat_user.php";  
 }
-
-elseif ($_GET['page']=='pdetail'){  
-  include "page/page_pdetail/product_detail.php";  
+elseif ($_GET['page']=='riwayat-saldo'){  
+  include "page/page_profil/riwayat-saldo.php";  
 }
-elseif ($_GET['page']=='katalog'){  
-  include "page/page_katalog/katalog.php";  
+elseif ($_GET['page']=='menang-lelang'){  
+  include "page/page_profil/menang-lelang.php";  
 }
-elseif ($_GET['page']=='keranjang'){  
-  include "page/page_keranjang/keranjang.php";  
+elseif ($_GET['page']=='menang-lelang'){  
+  include "page/page_profil/menang-lelang.php";  
 }
-elseif ($_GET['page']=='checkout'){  
-  include "page/page_keranjang/checkout.php";  
+elseif ($_GET['page']=='dalam-pengiriman'){  
+  include "page/page_profil/dalam-pengiriman.php";  
 }
-elseif ($_GET['page']=='confirmation'){  
-  include "page/page_keranjang/confirmation.php";  
-}
-elseif ($_GET['page']=='konfirm_bayar'){  
-  include "page/page_konfirm/konfirm_bayar.php";  
-}
-elseif ($_GET['page']=='thanks'){  
-  include "page/page_konfirm/thanks.php";  
-}
-elseif ($_GET['page']=='wait'){  
-  include "page/page_transaksi/wait.php";  
-}
-elseif ($_GET['page']=='hubungi_kami'){  
-  include "page/page_kontak/hubungi_kami.php";  
-}
-elseif ($_GET['page']=='pembelian'){  
-  include "page/page_transaksi/pembelian.php";  
-}
-elseif ($_GET['page']=='riwayat'){  
-  include "page/page_transaksi/riwayat.php";  
-}
-elseif ($_GET['page']=='riwayat_komplain'){  
-  include "page/page_transaksi/riwayat_komplain.php";  
+elseif ($_GET['page']=='lelang-selesai'){  
+  include "page/page_profil/lelang-selesai.php";  
 }
 
 else{
