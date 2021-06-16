@@ -58,7 +58,7 @@
                     <div class="row order_d_inner">
                         <div class="col-lg-12">
                             <div class="details_item">
-                                <h4>Saldo : </h4>
+                                <h4>Saldo : <?php echo"$data[saldo]"; ?></h4>
                                 <a href="?page=topup" class="btn btn-sm btn-primary ml-3 mb-1">Top Up Saldo</a> <a href="page/page_profil/withdraw_process.php" class="btn btn-sm btn-secondary mb-1">Tarik Saldo</a>
                                 <h5 class="ml-3 mt-5"><?php echo"$data[nama]"; ?></h5>
                                 <ul class="list mt-3">
