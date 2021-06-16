@@ -27,13 +27,14 @@
 		<div class="container">
 			<div class="row">				
 			
-				<h3>Ubah Profil</h3> <br><br>
+				
 				<?php
 				$query = "SELECT * FROM users WHERE id_user='$_SESSION[id_user]'";
 				$execute = mysqli_query($koneksi,$query);
 				$r 		= mysqli_fetch_array($execute);
 				?>
 						<form class="row contact_form" action="page/page_login/aksi_profil.php" method="post" enctype="multipart/form-data">
+						<!-- <h3>Ubah Profil</h3> <br> <br> -->
 									<div class="col-md-7">
 										<div class="form-group">
 											<h5>Email</h5>
