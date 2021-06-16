@@ -16,8 +16,8 @@ elseif ($_GET['page']=='login'){
 elseif ($_GET['page']=='register'){  
   include "page/page_login/register.php";  
 }
-elseif ($_GET['page']=='profil'){  
-  include "page/page_login/profil.php";  
+elseif ($_GET['page']=='edit-profil'){  
+  include "page/page_login/edit-profil.php";  
 }
 elseif ($_GET['page']=='barang'){  
   include "page/page_barang/barang.php";  
