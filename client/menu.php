@@ -159,10 +159,49 @@ padding:5px; border:1px dashed #C2DAE7;}
   });
 </script>
 
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-4w3qtEm6LFpL8CN6"></script>
+<script type="text/javascript">
+  document.getElementById('pay-button').onclick = function(){
+    // This is minimal request body as example.
+    // Please refer to docs for all available options: https://snap-docs.midtrans.com/#json-parameter-request-body
+    // TODO: you should change this gross_amount and order_id to your desire. 
+    var varnilai = $("#nilai").val();
+    var vartotal_semua = $("#total_semua").val();
+    var varid_saldo = $("#id_saldo").val();
+    var requestBody = 
+    {
+      transaction_details: {
+        gross_amount: vartotal_semua,
+        // as example we use timestamp as order ID
+        order_id: varnilai
+      }
+    } 
+    
+    getSnapToken(requestBody, function(response){
+      var response = JSON.parse(response);
+      console.log("new token response", response);
+      // Open SNAP payment popup, please refer to docs for all available options: https://snap-docs.midtrans.com/#snap-js
+      snap.pay(response.token);
+    })
+  };
+  /**
+  * Send AJAX POST request to checkout.php, then call callback with the API response
+  * @param {object} requestBody: request body to be sent to SNAP API
+  * @param {function} callback: callback function to pass the response
+  */
+  function getSnapToken(requestBody, callback) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+      if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        callback(xmlHttp.responseText);
+      }
+    }
+    xmlHttp.open("post", "http://localhost/lelang/checkout.php");
+    xmlHttp.send(JSON.stringify(requestBody));
+  }
+</script>
+
 </body>
 
 </html>
 
-<?php
-
-?>

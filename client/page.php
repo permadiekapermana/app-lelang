@@ -49,7 +49,12 @@ elseif ($_GET['page']=='dalam-pengiriman'){
 elseif ($_GET['page']=='lelang-selesai'){  
   include "page/page_profil/lelang-selesai.php";  
 }
-
+ elseif ($_GET['page']=='topup-saldo'){  
+  include "page/page_profil/topup-saldo.php";  
+}
+elseif ($_GET['page']=='bayar'){  
+  include "page/page_profil/bayar.php";  
+}
 else{
   echo "<p><b>Halaman Tidak DITEMUKAN</b></p>";
 }		
