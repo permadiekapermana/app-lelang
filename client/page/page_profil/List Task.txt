@@ -1,0 +1,29 @@
+User Member
+- Topup Saldo (Ahok)
+- Edit Profil (done)
+- Tarik Saldo (done)
+- Riwayat Saldo
+- Notif Menang (done)
+- Barang dalam pengiriman (done)
+- Lelang Selesai (done)
+- Invoice (done)
+
+Pelelang
+- Dashboard (done)
+- Pengiriman Barang (done)
+- Lelang Selesai (done)
+- Invoice (done)
+- Saldo
+- Tarik Saldo
+
+Admin
+- Dashboard (done)
+- Pengiriman Barang (done)
+- Lelang Selesai (done)
+- Invoice (done)
+- Permintaan Tarik Saldo
+- Riwayat Saldo
+
+Pelanggan Tambahan
+-Midtrans
+-isi Saldo
