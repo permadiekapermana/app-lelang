@@ -72,27 +72,27 @@ try {
 $WorkingArray = json_decode(json_encode($status),true);
 //$character = json_decode($status);
 
-if($WorkingArray[payment_type]=='bank_transfer'){
-echo "BANK : ".$WorkingArray[va_numbers][0][bank];
+if($WorkingArray['payment_type']=='bank_transfer'){
+echo "BANK : ".$WorkingArray['va_numbers'][0]['bank'];
 echo "</br>";
-echo "VA : ".$WorkingArray[va_numbers][0][va_number];
+echo "VA : ".$WorkingArray['va_numbers'][0]['va_number'];
 }
-if($WorkingArray[payment_type]=='echannel'){
-echo "Bill Key : ".$WorkingArray[bill_key];
+if($WorkingArray['payment_type']=='echannel'){
+echo "Bill Key : ".$WorkingArray['bill_key'];
 echo "</br>";
-echo "Biller Code : ".$WorkingArray[biller_code];
+echo "Biller Code : ".$WorkingArray['biller_code'];
 }
-if($WorkingArray[payment_type]=='gopay'){
+if($WorkingArray['payment_type']=='gopay'){
 echo "Informasi : Gopay";
 }
-if($WorkingArray[payment_type]=='bca_klikbca'){
-echo "Approval Code : ".$WorkingArray[approval_code];
+if($WorkingArray['payment_type']=='bca_klikbca'){
+echo "Approval Code : ".$WorkingArray['approval_code'];
 
 }
-if($WorkingArray[payment_type]=='cstore'){
-echo "Tempat : ".$WorkingArray[store];
+if($WorkingArray['payment_type']=='cstore'){
+echo "Tempat : ".$WorkingArray['store'];
 echo "</br>";
-echo "Kode  : ".$WorkingArray[payment_code];
+echo "Kode  : ".$WorkingArray['payment_code'];
 
 }
 
@@ -114,9 +114,9 @@ echo "Kode  : ".$WorkingArray[payment_code];
 ?>
 </td>
       <td><?php echo $data['order_id'];?></td>
-      <td><?php echo"Rp. ".number_format ($WorkingArray[gross_amount]). " ,-"; 
+      <td><?php echo"Rp. ".number_format ($WorkingArray['gross_amount']). " ,-"; 
 ?></td>
-<td><?php echo $WorkingArray[transaction_status];?></td>
+<td><?php echo $WorkingArray['transaction_status'];?></td>
 <td><?php echo $data['nama'];?></td>     
         </tr>  
        <?php
