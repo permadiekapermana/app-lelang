@@ -35,7 +35,7 @@
                 <div class="row">
 
                 <?php
-                $query = "SELECT * FROM users INNER JOIN saldo ON saldo.id_users=users.id_user WHERE users.id_user='$_SESSION[id_user]' ORDER BY id_saldo DESC LIMIT 1";
+                $query = "SELECT * FROM users INNER JOIN riwayat_saldo ON riwayat_saldo.id_user=users.id_user WHERE users.id_user='$_SESSION[id_user]' ORDER BY id_saldo DESC LIMIT 1";
                 $execute = mysqli_query($koneksi,$query);
 
                 $data = mysqli_fetch_array($execute);
@@ -48,12 +48,12 @@
                                
                                 <h5 class="ml-3 mt-5"><?php echo"$data[nama]"; ?></h5>
                                 <ul class="list mt-3">
-                                    <li><a href="#"><span>Jumlah Pembelian</span> : <?php echo"$data[saldos]"; ?></a></li>
+                                    <li><a href="#"><span>Jumlah Pembelian</span> : <?php echo"$data[nominal]"; ?></a></li>
                                     <li><a href="#"><span>Nomor HP</span> : <?php echo"$data[no_hp]"; ?></a></li>
                                     <li><a href="#"><span>Alamat</span> : <?php echo"$data[alamat]"; ?></a></li>
                                     <li><a href="#"><span>Role</span> : <?php echo"$data[order_id]"; ?></a></li>
                                 </ul>
-                                <input type="hidden" class="form-control" id="total_semua" name="total_semua" value="<?php echo"$data[saldos]"; ?>" placeholder="Masukkan Nomor Rekening" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Jumlah Saldo'" required>
+                                <input type="hidden" class="form-control" id="total_semua" name="total_semua" value="<?php echo"$data[nominal]"; ?>" placeholder="Masukkan Nomor Rekening" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Jumlah Saldo'" required>
                                 <input type="hidden" class="form-control" id="nilai" name="nilai" value="<?php echo"$data[order_id]"; ?>" placeholder="Masukkan Nomor Rekening" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Jumlah Saldo'" required>
                                 
                                 <input type="hidden" class="form-control" id="id_saldo" name="id_saldo" value="<?php echo"$data[id_saldo]"; ?>" placeholder="Masukkan Nomor Rekening" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Jumlah Saldo'" required>

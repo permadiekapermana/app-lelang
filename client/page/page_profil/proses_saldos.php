@@ -6,7 +6,7 @@ $koneksi = mysqli_connect('localhost','root','','db_lelang');
 
     $pel    = "PLG-";
     $y      = substr($pel,0,4);
-    $qry    = "SELECT * FROM saldo WHERE substr(order_id,1,4)='$y' ORDER BY order_id DESC LIMIT 0,1";
+    $qry    = "SELECT * FROM riwayat_saldo WHERE substr(order_id,1,4)='$y' ORDER BY order_id DESC LIMIT 0,1";
     $query  = mysqli_query($koneksi,$qry); 
     $row    = mysqli_num_rows($query);
     $data   = mysqli_fetch_array($query);
@@ -29,8 +29,8 @@ $saldos = $_POST['saldos'];
 $stat =$_POST['stat'];
 
  
- $query = "INSERT INTO saldo (order_id, id_users, saldos, stat) VALUES 
-                    ('$order_id', '$id_user', '$saldos','$stat')";
+ $query = "INSERT INTO riwayat_saldo (id_user, nominal, order_id, status, jenis) VALUES 
+                    ('$id_user', '$saldos', '$order_id', 'Menunggu Pembayaran', 'Topup')";
                     $result = mysqli_query($koneksi, $query);
                     // periska query apakah ada error
                     if(!$result){
