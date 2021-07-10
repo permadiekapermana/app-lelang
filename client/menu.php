@@ -196,7 +196,7 @@ padding:5px; border:1px dashed #C2DAE7;}
         callback(xmlHttp.responseText);
       }
     }
-    xmlHttp.open("post", "http://localhost/app_lelang/checkout.php");
+    xmlHttp.open("post", "http://localhost/app-lelang/checkout.php");
     xmlHttp.send(JSON.stringify(requestBody));
   }
 </script>
