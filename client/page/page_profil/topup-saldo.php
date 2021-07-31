@@ -33,9 +33,9 @@
                 $execute = mysqli_query($koneksi,$query);
 
                 $data = mysqli_fetch_array($execute);
-                ?>
+                ?> 
                                  <input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo"$data[id_user]"; ?>" placeholder="Masukkan Nomor Rekening" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Jumlah Saldo'" required>
-                                 <input type="hidden" class="form-control" id="stat" name="stat" value="cart" placeholder="Masukkan Nomor Rekening" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Jumlah Saldo'" required>
+                               
                                 <div class="col-md-7 text-left">
                                     <button type="submit" value="submit" class="primary-btn">TopUp</button>
                                 </div>

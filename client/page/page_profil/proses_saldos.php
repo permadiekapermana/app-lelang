@@ -26,7 +26,7 @@ $order_id = $kode_otomatis;
 // echo"$order_id";
 $id_user = $_POST['id_user'];
 $saldos = $_POST['saldos'];
-$stat =$_POST['stat'];
+
 
  
  $query = "INSERT INTO riwayat_saldo (id_user, nominal, order_id, status, jenis) VALUES 

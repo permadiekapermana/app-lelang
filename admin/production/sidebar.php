@@ -97,7 +97,7 @@
     </ul>
     </li>
     <li class="nav-item">
-    <a href="?module=saldo" class="nav-link">
+    <a href="modul/mod_saldo/saldo.php" class="nav-link">
         <i class="nav-icon fas fa-money-bill"></i>
         <p>
         Withdraw Saldo

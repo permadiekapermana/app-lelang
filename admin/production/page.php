@@ -15,7 +15,7 @@ elseif (empty($_SESSION['id_user']) AND empty($_SESSION['id_user'])){
   echo "<script>alert('Untuk akses sistem, anda harus login!'); window.location = '../../web/main.php'</script>";
 }
 
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +34,10 @@ elseif (empty($_SESSION['id_user']) AND empty($_SESSION['id_user'])){
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

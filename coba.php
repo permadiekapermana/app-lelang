@@ -34,7 +34,7 @@ Config::$serverKey = 'SB-Mid-server-MlZEweTajvVFnRDf4NMHiTqq';
     </thead>
     <tbody>
     <?php
-                $query = "SELECT * FROM saldo INNER JOIN users ON saldo.id_users=users.id_user ORDER BY id_saldo DESC";
+                $query = "SELECT * FROM riwayat_saldo INNER JOIN users ON riwayat_saldo.id_user=users.id_user ORDER BY id_saldo DESC";
                 $execute = mysqli_query($koneksi,$query);
                 $no = 1;
                while( $data = mysqli_fetch_array($execute)){
