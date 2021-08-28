@@ -29,7 +29,7 @@ $saldos = $_POST['saldos'];
 
 
  
- $query = "INSERT INTO riwayat_saldo (id_user, nominal, order_id, status, jenis) VALUES 
+ $query = "INSERT INTO riwayat_saldo (id_user, nominal, order_id, status_bayar, jenis) VALUES 
                     ('$id_user', '$saldos', '$order_id', 'Menunggu Pembayaran', 'Topup')";
                     $result = mysqli_query($koneksi, $query);
                     // periska query apakah ada error

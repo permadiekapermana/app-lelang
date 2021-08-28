@@ -39,7 +39,7 @@ Config::$serverKey = 'SB-Mid-server-MlZEweTajvVFnRDf4NMHiTqq';
                 $no = 1;
                while( $data = mysqli_fetch_array($execute)){
                 ?>
-        <tr>
+                      <tr>
         <td><?=$no++?></td>
       <td>
       <?php

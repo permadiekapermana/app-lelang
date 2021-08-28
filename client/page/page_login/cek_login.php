@@ -44,9 +44,9 @@ if (isset($_POST['login'])) {
             // var_dump($_SESSION['role']);
         } elseif ($r['role']=='pelelang') {
             // .....
-            header('location:../../../admin/production/page.php?module=dashboard');
+            header('location:../../../admin/index.php');
         } elseif ($r['role']=='admin') {
-            header('location:../../../admin/production/page.php?module=dashboard');
+            header('location:../../../admin/index.php');
             // echo"Ini page admin";
             // var_dump($_SESSION['role']);
         }
